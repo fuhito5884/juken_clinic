@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO -->
+  <title>中学受験クリニック｜家庭学習の「判断」を引き受けます</title>
+  <meta name="description" content="中学受験クリニックは、家庭学習の設計や質問対応そのものではなく、学習に関する意思決定（優先順位・取捨選択・介入/非介入）を引き受ける判断委託型サポートです。初回面談では具体策は出さず、どの判断を預けるかを整理します。" />
+
+  <!-- OGP（あとでURLだけ差し替え） -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:title" content="中学受験クリニック｜家庭学習の「判断」を引き受けます" />
+  <meta property="og:description" content="塾も宿題もあるのに迷いが消えない—原因は判断不在です。中学受験クリニックは、教材・計画・過去問・親の関与など学習に関する判断を引き受けます。" />
+  <meta property="og:url" content="https://example.com" />
+  <meta property="og:site_name" content="中学受験クリニック" />
+  <meta property="og:image" content="https://example.com/ogp.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="中学受験の学習整理・質問対応サポート" />
+
+  <!-- X（Twitter） -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Judgements accordion */
+    .judge-accordion{ margin-top: 12px; }
+    details.judge-group{
+      border: 1px solid rgba(15, 23, 42, .12);
+      border-radius: 14px;
+      background: rgba(255,255,255,.92);
+      overflow: hidden;
+      margin: 10px 0;
+      box-shadow: 0 8px 18px rgba(11,18,32,.06);
+    }
+    details.judge-group > summary{
+      list-style: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--primary-2);
+      background: linear-gradient(180deg, rgba(31,79,214,.08), rgba(255,255,255,.96));
+    }
+    details.judge-group > summary::-webkit-details-marker{ display:none; }
+    details.judge-group > summary::marker{ content: ""; }
+    details.judge-group > summary::after{
+      content: "+";
+      font-weight: 950;
+      opacity: .7;
+      color: var(--text);
+    }
+    details.judge-group[open] > summary::after{ content: "−"; }
+    details.judge-group > ol.list{
+      margin: 0;
+      padding: 0 18px 14px 34px;
+      color: var(--text);
+    }
+    details.judge-group > ol.list li{ margin: 6px 0; }
+  </style>
+
+</head>
+
+<body>
+  <!-- 固定CTA（右下） -->
+  <a class="floating-cta" href="#contact" aria-label="お申し込みはこちら">
+    <span class="floating-cta__label">お申し込みはこちら</span>
+    <span class="floating-cta__sub">最下部へ</span>
+  </a>
+
+  <header class="hero" id="top">
+    <div class="container hero__inner">
+      <p class="hero__kicker">中学受験／小4〜小6中心</p>
+      <h1 class="hero__title">【中学受験クリニック】<br />家庭学習の「判断」を引き受けます</h1>
+      <p class="hero__lead">
+        塾も宿題もある。<br />
+        それでも迷いが消えないのは、<br />
+        <strong>判断を引き受ける人がいない</strong>からです。<br />
+        教えるのではなく、学習に関する意思決定（優先順位・取捨選択・介入/非介入）を、プラン範囲内で引き受けます。
+      </p>
+
+      <div class="hero__cta">
+        <a class="button button--primary" href="#contact">初回面談で状況を整理してみる</a>
+        <a class="button button--ghost" href="#plans">料金を見る</a>
+      </div>
+
+      <p class="hero__note">※無理な勧誘はしません（合う／合わないを含めて確認します）</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 悩み（検索ワードも意識） -->
+    <section class="section" id="problems">
+      <h2 class="section__title">こんなお悩み、ありませんか？</h2>
+
+      <div class="grid grid--2">
+        <div class="card">
+          <h3 class="card__title">宿題が終わらない</h3>
+          <p class="card__text">「量が多い」だけでなく、優先順位が決まらず時間が溶けるケース。</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">宿題をやっているのに成績が伸びない</h3>
+          <p class="card__text">“やった感”はあるのに、次のテストで同じミスを繰り返す。</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">質問できない</h3>
+          <p class="card__text">質問の作り方は、受験に独自なテクニックです。</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">親の方が焦って空気が悪くなる</h3>
+          <p class="card__text">受験は、家庭でこそ伸び伸びと。</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p class="callout__title">塾でよく見てきた“伸びる子の共通点”</p>
+        <ul class="check">
+          <li><strong>成績が伸びる子は「質問が違う」</strong>（どこで止まったか／何を試したかが言える）</li>
+          <li><strong>先生に「何をやったか」を説明できる子は伸びる</strong>（再現できる学習になる）</li>
+        </ul>
+        <p class="callout__text">
+          ここを家庭でも作れるようにするのが、このサポートの役割です。
+        </p>
+      </div>
+    </section>
+
+    
+    <!-- サービスの核 -->
+    <section class="section" id="about">
+      <h2 class="section__title">このクリニックが引き受けるもの</h2>
+
+      <div class="grid grid--2">
+        <div class="card">
+          <h3 class="card__title">① 判断する</h3>
+          <ul class="list">
+            <li>今やるべきか、やらないべきか</li>
+            <li>どの教材・課題を捨てるか</li>
+            <li>質問に答えるべきか、止めるべきか</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="card__title">② 判断しないことを決める</h3>
+          <ul class="list">
+            <li>今は決めなくていいこと</li>
+            <li>家庭が抱えなくていい迷い</li>
+            <li>先延ばしにしてよい判断</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mini-cta">
+        <div>
+          <p class="mini-cta__title">初回面談でやること</p>
+          <p class="mini-cta__flow">◻︎ 現状把握 → ◻︎ 迷い（判断）の棚卸し → ◻︎ どの判断を預けるか決める</p>
+          <p class="note">※初回面談では具体的な勉強法の指示や、志望校の可否など「判断そのもの」は行いません。</p>
+        </div>
+        <a class="button button--small" href="#contact">初回面談を申し込む</a>
+      </div>
+    </section>
+
+
+
+    <!-- 50の判断 -->    <section class="section" id="judgements">
+      <h2 class="section__title">私たちが引き受ける50の判断</h2>
+      <p class="muted">
+        中学受験で最も消耗するのは、勉強そのものではなく判断です。<br />
+        下の見出しをクリックすると、各カテゴリの判断が開きます（必要なところだけ見てください）。
+      </p>
+
+      <div class="judge-accordion">
+
+        <details class="judge-group" open>
+          <summary class="judge-group__summary">判断①〜⑩：学習全体の設計（最上位）</summary>
+          <ol class="list">
+            <li>今の成績は「正常」か「危険信号」か</li>
+            <li>今月は“取りに行く月”か“崩さない月”か</li>
+            <li>今の努力量は不足か、過剰か</li>
+            <li>今のやり方は「合っていない」のか「時間が足りない」だけか</li>
+            <li>今一番のボトルネック（科目・単元）はどこか</li>
+            <li>今この家庭が最優先で守るべきものは成績か、精神安定か</li>
+            <li>今の状態で志望校を上げる判断をしてよいか</li>
+            <li>下げるなら「いつ」「どこまで」か</li>
+            <li>この子にとって“勝負をかける時期”はいつか</li>
+            <li>今は攻めるべきか、耐えるべきか</li>
+          </ol>
+        </details>
+
+        <details class="judge-group">
+          <summary class="judge-group__summary">判断⑪〜⑳：教材・課題の取捨選択（現場の消耗ゾーン）</summary>
+          <ol class="list">
+            <li>塾教材は全部やるべきか、捨てるべきか</li>
+            <li>捨てるならどこか</li>
+            <li>今やるべき教材は「新規」か「復習」か</li>
+            <li>同じ単元を別教材で重ねるべきか</li>
+            <li>過去問に入る判断をしてよいか</li>
+            <li>過去問を解くなら、どの学校からか</li>
+            <li>間違い直しはどこまで求めるべきか</li>
+            <li>ノートを作る意味がある子か</li>
+            <li>解説を読むだけで済ませてよい問題か</li>
+            <li>今それをやる意味があるか</li>
+          </ol>
+        </details>
+
+        <details class="judge-group">
+          <summary class="judge-group__summary">判断㉑〜㉚：質問対応（答える／答えないも判断）</summary>
+          <ol class="list">
+            <li>その質問は「今聞くべき質問」か</li>
+            <li>自力で考えさせるべきか、即答すべきか</li>
+            <li>質問の背景は理解不足か、焦りか</li>
+            <li>その質問は成績に直結するか</li>
+            <li>その質問は放置してよいか</li>
+            <li>似た質問をまとめて処理すべきか</li>
+            <li>質問の仕方自体を修正すべきか</li>
+            <li>「質問させない方がよい時期」か</li>
+            <li>質問量が多すぎるサインか</li>
+            <li>この質問は親が関与すべきか否か</li>
+          </ol>
+        </details>
+
+        <details class="judge-group">
+          <summary class="judge-group__summary">判断㉛〜㊵：子どもの状態（増減・休む・介入）</summary>
+          <ol class="list">
+            <li>今は叱るべきか、黙るべきか</li>
+            <li>声をかけるなら何についてか</li>
+            <li>学習量を減らす判断をしてよいか</li>
+            <li>休ませることが逃げか、回復か</li>
+            <li>伸び悩みの原因は能力か、疲労か</li>
+            <li>やる気の問題か、設計の問題か</li>
+            <li>今は成功体験を作るべきか</li>
+            <li>あえて失敗させるべきか</li>
+            <li>親が介入すると逆効果な局面か</li>
+            <li>第三者が入る意味があるタイミングか</li>
+          </ol>
+        </details>
+
+        <details class="judge-group">
+          <summary class="judge-group__summary">判断㊶〜㊿：親の関わり（最も事故りやすい領域）</summary>
+          <ol class="list">
+            <li>親が管理すべきか、手放すべきか</li>
+            <li>声かけが過干渉になっているか</li>
+            <li>比較が悪影響になっているか</li>
+            <li>家庭内ルールを変えるべきか</li>
+            <li>成績の話題を出す頻度は適切か</li>
+            <li>叱責と指摘の線引きは適切か</li>
+            <li>親の不安を子に見せてよいか</li>
+            <li>今は親の期待を下げるべきか</li>
+            <li>親自身が距離を取るべき時期か</li>
+            <li>「もう任せてよい」判断か</li>
+          </ol>
+        </details>
+
+      </div>
+
+      <p class="note">
+        ※対応できる判断はプランごとに異なります。範囲外の判断には回答しません（越境を防ぐため）。
+      </p>
+    </section>
+
+
+    <!-- プロフィール（“人の気配”） -->
+    <section class="section section--profile" id="profile">
+      <h2 class="section__title">担当者について</h2>
+
+      <div class="profile">
+        <div class="profile__box">
+          <p class="profile__name">小林 史</p>
+          <p class="profile__meta">中学受験指導歴8年目。現場で毎年見かける「迷い（判断）」が家庭を消耗させる現実から、判断委託型の支援が必要だと考え、「中学受験クリニック」の設立を決断。</p>
+          <ul class="dot">
+            <li>対象の中心：小4〜小6</li>
+            <li>サービスの核：</li>
+                <p>家庭学習の設計…「質問」をベースにした、思考力をつける学習</p>
+                <p>中学受験そのもの…中学受験という特殊な競技における保護者様の安心</p>
+
+          </ul>
+        </div>
+      </div>
+    </section>
+<!-- 3つの特色 -->
+<section class="section" id="features">
+  <h2 class="section__title">3つの特色（家庭学習が回り始める仕組み）</h2>
+  <p class="muted">
+    「勉強しているのに伸びない」は、才能よりも“運用”の問題で起きます。<br>
+    このサービスは、家庭学習を回すための3つの支えで構成されています。
+  </p>
+
+  <div class="features">
+    <!-- ① 学習ログ -->
+    <article class="feature feature--primary">
+      <div class="feature__head">
+        <span class="feature__num">01</span>
+        <h3 class="feature__title">学習ログを毎日提出</h3>
+<div class="feature__badge">
+  <span class="badge__icon">⏱</span>
+  <span class="badge__text">所要 <strong>3分</strong></span>
+</div>
+      </div>
+      <p class="feature__text">
+        <strong>公式LINE</strong>から、今日やったこと／つまずいた所／明日やることを、短く送るだけ。<br>
+        「やったつもり」を減らし、<strong>優先順位と次の一手</strong>が自然に決まる状態を作ります。
+      </p>
+      <p class="feature__note">※文章が苦手な子は、箇条書きや写真だけでもOKです。</p>
+    </article>
+
+    <!-- ② 質問対応 -->
+    <article class="feature">
+      <div class="feature__head">
+        <span class="feature__num">02</span>
+        <h3 class="feature__title">判断材料の提出（質問・つまずき）</h3>
+      </div>
+      <p class="feature__text">
+        大事なのは答えそのものより、<strong>「どこで止まったか」</strong>を特定すること。<br>
+        うまく質問できない子ほど、質問の作り方から一緒に整えます。
+      </p>
+    </article>
+
+    <!-- ③ 面談 -->
+    <article class="feature feature--wide">
+      <div class="feature__head">
+        <span class="feature__num">03</span>
+        <h3 class="feature__title">必要な時の面談（💡個別指導に振替可）</h3>
+      </div>
+      <p class="feature__text">
+        ずっと面談を繰り返すのではなく、<strong>迷いが出たタイミングだけ</strong>短く確認します。<br>
+        状況によっては、面談枠を<strong>解説（指導）</strong>に振り替えることも可能です（※別途条件あり）。
+      </p>
+      <p class="feature__note">※面談は「保護者のみ」でもOKです。</p>
+    </article>
+
+  </div><!-- /.features -->
+</section>
+
+    <!-- 料金（4プラン + ベーシック/スタンダード目立たせる + プレミアム横長） -->
+    <section class="section" id="plans">
+      <h2 class="section__title">料金プラン</h2>
+
+      <div class="plans">
+        
+        <article class="plan plan--basic plan--featured">
+
+          <div class="plan__badge">人気</div>
+          <h3 class="plan__name">ベーシック</h3>
+          <p class="plan__price">月額 29,800円</p>
+          <ul class="plan__list">
+            <li><strong>判断範囲：</strong>判断①〜⑮（※⑦⑧を除く／致命傷を避ける判断）</li>
+            <li>月1回の面談（30〜60分）</li>
+            <li>判断材料の提出（学習ログ／質問）</li>
+          </ul>
+      <p class="plan-desc">
+         学習状況を整理し、<br>
+          <strong>判断①〜⑮（※⑦⑧を除く）を引き受けます</strong>
+      </p>
+          <p class="note">※志望校の上下・過去問校の選定など、合否に直結する判断は扱いません。</p>
+
+        </article>
+
+        <article class="plan plan--standard plan--featured2">
+
+          <div class="plan__badge plan__badge--alt">おすすめ</div>
+          <h3 class="plan__name">スタンダード</h3>
+          <p class="plan__price">月額 54,800円</p>
+          <ul class="plan__list">
+            <li><strong>判断範囲：</strong>判断①〜⑳、㉑〜㉗、㉛〜㊵（成績を動かす判断）</li>
+            <li>月2回の面談（各30〜60分）</li>
+            <li>判断材料の提出（学習ログ／質問）＋進捗チェック</li>
+          </ul>
+          <p class="plan-desc">
+  学習状況を継続的に見ながら、<br>
+  <strong>成績を動かす判断（①〜⑳、㉑〜㉗、㉛〜㊵）を引き受けます</strong>
+          </p>
+
+          <p class="note">※「判断範囲」の詳細（番号一覧）は初回面談で提示します。</p>
+
+        </article>
+
+      </div>
+
+      <article class="plan plan--premium">
+
+        <div class="plan--premium__left">
+          <h3 class="plan__name">プレミアムプラン</h3>
+          <p class="plan__sub">合否を左右する判断まで含めて引き受けます（人数限定）</p>
+          <p class="note">※価格は面談でご案内します（状況により設計が変わるため）。</p>
+        </div>
+        <div class="plan--premium__right">
+          <ul class="plan__list plan__list--compact">
+            <li><strong>判断範囲：</strong>判断①〜㊿（全判断）</li>
+            <li>週1回面談＋追加チェック</li>
+            <li>判断材料の提出（学習ログ／質問）</li>
+          </ul>
+        </div>
+
+      </article>
+
+      <div class="cta-row">
+        <a class="button button--primary" href="#contact">申し込みフォームへ</a>
+        <a class="button button--ghost" href="#faq">よくある質問を見る</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <h2 class="section__title">よくある質問</h2>
+
+      <details class="faq" open>
+        <summary class="faq__q">質問はどんな形式で送れますか？</summary>
+        <div class="faq__a">
+          <p>公式LINEから受け付けます。文章が苦手な子供こそ、フォームに入れる文章を考えて強くなります。もちろん問題文や解説は写真で送れます。大事なのは「どこで止まったか／何を試したか」を言語化することです。</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary class="faq__q">成績が低いと断られますか？</summary>
+        <div class="faq__a">
+          <p>大丈夫です。むしろ「どこで詰まっているか」を特定し、次の一手を作るところから始めます。</p>
+        </div>
+      </details>
+      <details class="faq">
+        <summary>ベーシックとスタンダードで迷っています</summary>
+        <div class="faq__a">
+           <p>
+      ご家庭で<br>
+      ・「次に何をやるか」を話し合って決められる<br>
+      ・決めたことを、ある程度そのまま回せる<br>
+      状態であれば、<strong>ベーシックで十分</strong>です。
+    </p>
+
+    <p>
+      一方で、<br>
+      ・判断に迷う時間が長い<br>
+      ・親子で「これで合っているのか？」という不安が出やすい<br>
+      ・詰まりが出たときに立て直すのが大変<br>
+      という場合は、<strong>スタンダードの方が負担が減ります</strong>。
+    </p>
+
+    <p>
+      スタンダードでは、学習状況を継続的に見ながら、<br>
+      <strong>迷いが出る前に判断を引き受ける</strong>ことを重視しています。
+    </p>
+  </div>
+</details>
+
+      <details class="faq">
+        <summary class="faq__q">面談は保護者だけでも可能ですか？</summary>
+        <div class="faq__a">
+          <p>可能です。「保護者のみ/親子/子ども中心」のように状況に合わせて調整します。</p>
+        </div>
+      </details>
+
+      <details class="faq">
+        <summary class="faq__q">途中でプラン変更はできますか？</summary>
+        <div class="faq__a">
+          <p>可能です。</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <h2 class="section__title">お申し込み・お問い合わせ</h2>
+
+      <div class="contact">
+        <div class="card">
+          <p class="muted">初めての方は、申込みフォームからご連絡ください。</p>
+
+          <a class="button button--primary" href="https://docs.google.com/forms/d/1gXaoMgtxGOk1cLLgz19u5tY5gJDXdWhSFNhPuraLs2A/edit" target="_blank" rel="noopener">
+            申込みフォームへ進む
+          </a>
+
+          <p class="note">※原則、翌営業日までにご返信します。</p>
+        </div>
+
+        <div class="card">
+          <p class="subtext">
+            すでにご利用中の方・休会中の方は、下記メールからご連絡ください。<br />
+            <a class="link" href="mailto:fuhitochaperone@gmail.com?subject=ご連絡&body=【お名前】%0D%0A【ご用件】">
+              fuhitochaperone@gmail.com
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <p class="footer__brand">中学受験クリニック</p>
+        <p class="footer__small">© <span id="year"></span> Kobayashi. All rights reserved.</p>
+        <a class="footer__top" href="#top">▲ 上に戻る</a>
+      </div>
+    <p class="note">※本サービスは医療行為ではありません。</p>
+    </footer>
+  </main>
+
+  <script>
+    // 年だけ自動
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
