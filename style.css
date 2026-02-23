@@ -722,3 +722,191 @@ details.faq > .faq-answer p {
   font-size: 14px;
   padding: 12px 20px;
 }
+
+
+/* =========================
+   Single LP – Red Theme
+========================= */
+
+.lp-single {
+  --primary-1: #7f1d1d;
+  --primary-2: #b91c1c;
+  --accent: #ef4444;
+}
+
+.lp-single .hero {
+  background: linear-gradient(135deg, #7f1d1d, #b91c1c);
+  color: #ffffff;
+}
+
+.lp-single .hero__lead strong {
+  color: #ffe4e6;
+}
+
+.lp-single .button--primary {
+  background: #ef4444;
+  border-color: #ef4444;
+}
+
+.lp-single .button--primary:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+.lp-single .section__title {
+  color: #7f1d1d;
+}
+
+.lp-single .card {
+  border: 1px solid rgba(185, 28, 28, 0.2);
+}
+
+.lp-single .callout {
+  background: rgba(185, 28, 28, 0.08);
+  border-left: 4px solid #b91c1c;
+}
+
+/* =========================
+   Single LP – Bright Red + Orange CTA
+========================= */
+/* =========================
+   Single LP – Dark Red Theme
+========================= */
+
+.lp-single{
+  --single-red-1: #7f1d1d;   /* 深い赤 */
+  --single-red-2: #b91c1c;   /* 少し明るい赤 */
+  --single-red-3: #991b1b;   /* タイトル用 */
+}
+
+/* Hero */
+.lp-single .hero{
+  background: linear-gradient(135deg, var(--single-red-1), var(--single-red-2));
+  color:#fff;
+}
+
+/* 見出し */
+.lp-single .section__title{
+  color: var(--single-red-3);
+}
+
+/* カード */
+.lp-single .card{
+  border: 1px solid rgba(153,27,27,.25);
+}
+
+/* コールアウト */
+.lp-single .callout{
+  background: rgba(127,29,29,.08);
+  border-left: 4px solid var(--single-red-2);
+}
+
+/* =========================
+   Single LP – 左アクセントを赤に
+========================= */
+
+.lp-single #problems .card::before{
+  background: #b91c1c; /* 暗め赤 */
+}
+
+/* =========================
+   Single LP – CTAを赤単色に
+========================= */
+
+.lp-single .button--primary{
+  background: #b91c1c;
+  border-color: #b91c1c;
+  color: #ffffff;
+}
+
+.lp-single .button--primary:hover{
+  background: #991b1b;
+  border-color: #991b1b;
+}
+
+.lp-single .floating-cta{
+  background: #b91c1c;
+  border-color: #b91c1c;
+  color: #ffffff;
+}
+
+.lp-single .floating-cta:hover{
+  background: #991b1b;
+}
+
+/* =========================
+   Single LP – 青を完全排除
+========================= */
+
+.lp-single{
+  --primary: #b91c1c;
+  --primary-2: #991b1b;
+  --accent: #b91c1c;
+}
+
+/* ゴーストボタン（例：月額プランを見る） */
+.lp-single .button--ghost{
+  color: #b91c1c;
+  border-color: #b91c1c;
+}
+
+.lp-single .button--ghost:hover{
+  background: rgba(185,28,28,.08);
+  border-color: #991b1b;
+  color: #991b1b;
+}
+
+/* テキストリンク（最下部リンクなど） */
+.lp-single .link{
+  color: #b91c1c;
+}
+
+.lp-single .link:hover{
+  color: #991b1b;
+}
+/* ===== Cross CTA（ページ間リンクをボタン化）===== */
+.cross-cta{
+  margin: 18px 0 0;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.82);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  flex-wrap:wrap;
+}
+
+.cross-cta__label{
+  margin:0;
+  font-weight: 900;
+  color: var(--text);
+}
+
+.cross-cta__btn{
+  /* 見た目を“申込ボタン群”に寄せる */
+  box-shadow: 0 10px 22px rgba(11,18,32,.08);
+}
+
+/* ===== Mini CTA（単発導線だけ赤テーマ）===== */
+.mini-cta--red{
+  border-color: rgba(185,28,28,.28);
+  background: linear-gradient(180deg, rgba(185,28,28,.08), rgba(255,255,255,.90));
+}
+
+.mini-cta--red .mini-cta__title{
+  color: #991b1b;
+}
+
+/* mini-cta内のゴーストボタンだけ赤枠に */
+.mini-cta--red .button--ghost{
+  color: #991b1b;
+  border-color: rgba(185,28,28,.35);
+  background: rgba(255,255,255,.82);
+}
+
+.mini-cta--red .button--ghost:hover{
+  background: rgba(185,28,28,.08);
+  border-color: rgba(153,27,27,.55);
+}
